@@ -1,0 +1,6 @@
+.container{
+    background: url(/public/images/chuttersnap-m3ewYVannII-unsplash\ \(1\).jpg) rgba(0, 0, 0, 0.8);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+}

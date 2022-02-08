@@ -1,0 +1,20 @@
+.yellowCard{
+    background-image: url(/public/images/yellowMdCard.png);
+    background-position: 45% 40%;
+    background-size: 105%;
+    background-repeat: no-repeat;
+}
+
+.pinkCard{
+    background-image: url(/public/images/pinkMdCard.png);
+    background-position: 45% 40%;
+    background-size: 105%;
+    background-repeat: no-repeat;
+}
+
+.whiteCard{
+    background-image: url(/public/images/whiteMdCard.png);
+    background-position: 45% 40%;
+    background-size: 105%;
+    background-repeat: no-repeat;
+}

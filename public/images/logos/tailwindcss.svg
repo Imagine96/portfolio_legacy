@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="65" height="40" viewBox="0 0 65 40">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-0.028" y1="0.32" x2="1" y2="0.676" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2298bd"/>
+      <stop offset="1" stop-color="#0ed7b5"/>
+    </linearGradient>
+  </defs>
+  <path id="tailwindcss" d="M32.5,0q-13,0-16.25,13.333,4.875-6.667,11.375-5c2.472.634,4.239,2.474,6.2,4.51C37.007,16.161,40.695,20,48.75,20Q61.75,20,65,6.667q-4.875,6.667-11.375,5c-2.472-.634-4.239-2.474-6.2-4.51C44.243,3.839,40.555,0,32.5,0ZM16.25,20Q3.25,20,0,33.333q4.875-6.667,11.375-5c2.472.634,4.239,2.474,6.2,4.51C20.757,36.161,24.445,40,32.5,40q13,0,16.25-13.333-4.875,6.667-11.375,5c-2.472-.634-4.239-2.474-6.2-4.51C27.993,23.839,24.305,20,16.25,20Z" fill="url(#linear-gradient)"/>
+</svg>

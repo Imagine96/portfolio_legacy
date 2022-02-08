@@ -1,0 +1,28 @@
+.list{
+    background-image: url(/public/images/proyectsPage.png);
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.item{
+    background-image: url(/public/images/yellowProyect.png);
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.item__pink{
+    background-image: url(/public/images/pinkProyect.png);
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.item__blue{
+    background-image: url(/public/images/blueProyect.png);
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+

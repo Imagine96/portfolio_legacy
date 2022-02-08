@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect, lazy, Suspense } from "react";
+import { isMobile } from "react-device-detect";
+import Loader from "./components/layouts/loader/Loader";
+/* import DesktopClient from "./components/layouts/desktopUI/DesktopClient"; */
+/* import MobileClient from "./components/layouts/mobileUI/MobileClient"; */
+import "./App.css";
 
-function App() {
+const DesktopClient = lazy(() => import("./components/layouts/desktopUI/DesktopClient"))
+const MobileClient = lazy(() => import("./components/layouts/mobileUI/MobileClient"))
+
+const App: React.FC = () => {
+
+  let content = null
+
+  {isMobile ? (
+    content = <MobileClient />
+  ) : (
+    content = <DesktopClient />
+  )}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Suspense fallback={<Loader />} >
+        {content}
+      </Suspense>
+    </>
   );
-}
+};
 
 export default App;

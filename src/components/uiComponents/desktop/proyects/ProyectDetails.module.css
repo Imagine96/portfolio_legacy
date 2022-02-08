@@ -1,0 +1,33 @@
+.container{
+    background-image: url(/public/images/yellowProyect-details.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.container__pink{
+    background-image: url(/public/images/pinkProyect-details.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.container__blue{
+    background-image: url(/public/images/blueProyect-details.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 768px){
+    .container{
+        background-position: 0.5rem;
+    }
+    .container__pink{
+        background-position: 0.5rem;
+    }
+    .container__blue{
+        background-position: 0.5rem;
+    }
+}
+
