@@ -30,6 +30,7 @@ const Notes : React.FC = () => {
   return (
     <>
       <Note
+        delay={0}
         type="yellow"
         position=" right-[5rem] lg:right-[10rem] top-[25rem] lg:top-[20em] xl:top-[20rem] "
         rotation="rotate-[-20deg]"
@@ -37,6 +38,7 @@ const Notes : React.FC = () => {
         <h1 className="p-2  xl:text-[48px] lg:text-[32px] text-[24px] text-tawny-text lg:-translate-y-10 " > My name is Ruben, </h1>
       </Note>
       <Note
+        delay={1}
         type="pink"
         position=" right-[2rem] lg:right-[4rem] xl:right-6 top-[35rem] lg:top-[30rem] xl:top-[35rem] "
         rotation=" lg:rotate-12 rotate-3 "
@@ -44,6 +46,7 @@ const Notes : React.FC = () => {
         <h1 className="p-2 xl:text-[48px] lg:text-[32px] text-[24px] text-tawny-text " > FrontEnd developer. </h1>
       </Note>
       <Note
+        delay={2}
         type="white"
         position="right-[0.8rem] lg:right-[0] top-[50rem] lg:top-[55rem] xl:top-[60rem]"
         rotation="rotate-[-6deg]"
@@ -56,6 +59,7 @@ const Notes : React.FC = () => {
         })}
       </Note>
       <Note
+        delay={3}
         type="white"
         position="right-[0.5rem] lg:right-[5%] top-[65rem] z-[100] xl:right-[10%] top-[65rem] lg:top-[70rem] xl:top-[80rem]"
         rotation="rotate-[3deg]"
@@ -68,6 +72,7 @@ const Notes : React.FC = () => {
         })}
       </Note>
       <Note
+        delay={3.5}
         type="white"
         position=" right-[1rem] xl:-right-[2rem] top-[75rem] lg:top-[85rem] xl:top-[95rem]"
         rotation="rotate-[-8deg]"

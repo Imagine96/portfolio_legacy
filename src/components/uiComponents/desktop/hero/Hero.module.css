@@ -4,3 +4,43 @@
     background-size: cover;
     background-position: center;
 }
+
+.svg{
+    margin: 0;
+    width: 60px;
+}
+
+.path{
+    stroke-dasharray: 260;
+    stroke-dashoffset: 260;
+    animation: write 2s 300ms ease-in-out forwards;
+}
+
+.questions_1{
+    opacity: 0;
+    transform: translateX(-6rem);
+    animation: intro 1s 1000ms ease-in-out forwards;
+}
+.questions_2{
+    opacity: 0;
+    transform: translateX(-6rem);
+    animation: intro 1s 1.5s ease-in-out forwards;
+}
+.questions_3{
+    opacity: 0;
+    transform: translateX(-6rem);
+    animation: intro 1s 3s ease-in-out forwards;
+}
+
+@keyframes write {
+    100%{
+        stroke-dashoffset: 0%;
+    }
+}
+
+@keyframes intro {
+    100%{
+        opacity: 1;
+        transform: translateX(-8rem);
+    }
+}

@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import checkStatus from "../../../../utils/formValidation";
+import emailjs from "@emailjs/browser"
+
 
 const IMGSDIR = "/images/";
 const NAMEBG = "nameInput.png";
@@ -24,6 +26,7 @@ const Contact: React.FC = () => {
   const [textAreaRows, setTextAreaCols] = useState<number>(5);
 
   const messageRef = useRef<HTMLImageElement | null>(null);
+  const formRef = useRef<HTMLFormElement | null>(null) 
 
   const onInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -47,9 +50,21 @@ const Contact: React.FC = () => {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (validForm) {
+    if (validForm && formRef.current) {
       setErrorMessage(undefined);
       setInputStatus({ name: "", email: "", message: "" });
+
+      try{
+        emailjs.sendForm(process.env.REACT_APP_MAILJS_SERVICE_ID || " ", process.env.REACT_APP_MAILJS_TEMPLATE_ID || " ", formRef.current, process.env.REACT_APP_MAILJS_USER_ID || " ")
+        .then(result => {
+          console.log(result.text)
+        }, (err) => {
+          throw err
+        })
+      }catch(err){
+        console.log(err)
+      }
+
     } else {
     }
   };
@@ -85,7 +100,7 @@ const Contact: React.FC = () => {
 
   return (
     <div className=" flex flex-col justify-center sm:pt-40 md:py-4">
-      <div className="flex flex-row justify-around">
+      <div className={`flex flex-row ${ errorMessage ? "justify-around" : " pl-24 " }`}>
         <h1 className="text-3xl text-gray my-16"> Let's talk! </h1>
         {errorMessage ? (
           <div className=" ml-20 rotate-6 animate-ping animate-pulse p-2 z-20 rounded-lg text-gray py-2 bg-tawny-text mt-16">
@@ -93,7 +108,7 @@ const Contact: React.FC = () => {
           </div>
         ) : null}
       </div>
-      <form className="-mt-10" onSubmit={(e) => onSubmit(e)}>
+      <form ref={formRef} className="-mt-10" onSubmit={(e) => onSubmit(e)}>
         <div className=" lg:flex lg:flex-row flex flex-col">
           <div className="flex flex-col w-full pl-[8%]">
             <div className="xl:w-[50%] w-[75%] py-8">
@@ -109,7 +124,7 @@ const Contact: React.FC = () => {
                   value={inputStatus?.name}
                   onChange={(e) => onInputChange(e, "name")}
                   type="text"
-                  name="name-input"
+                  name="name"
                   id="name-input"
                 />
               </div>
@@ -128,8 +143,8 @@ const Contact: React.FC = () => {
                   value={inputStatus?.email}
                   onChange={(e) => onInputChange(e, "email")}
                   type="email"
-                  name="name-input"
-                  id="name-input"
+                  name="email"
+                  id="email-input"
                 />
               </div>
             </div>
@@ -147,8 +162,8 @@ const Contact: React.FC = () => {
                 value={inputStatus?.message}
                 placeholder="your message"
                 onChange={(e) => onInputChange(e, "message")}
-                name="name-input"
-                id="name-input"
+                name="message"
+                id="message-input"
               />
             </div>
           </div>
