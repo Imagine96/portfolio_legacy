@@ -35,11 +35,12 @@ const StackNote: React.FC<props> = (props: props) => {
   return (
     <>
       <div className="flex flex-row xl:pl-4 lg:pl-2 justify-between gap-4 items-center">
-        <h1 className={`xl:text-3xl lg:text-xl text-lg text-tawny-text `}>{props.text}</h1>
+        <h1 className={`xl:text-3xl sedgwick lg:text-xl text-lg text-tawny-text `}>{props.text}</h1>
         <img
           height={initSize.height}
           width={initSize.width}
           src={process.env.PUBLIC_URL + LOGOSDIR + props.img}
+          alt={`${props.text} + logo`}
         />
       </div>
     </>

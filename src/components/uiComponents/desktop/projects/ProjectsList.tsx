@@ -1,7 +1,7 @@
 import React from "react";
-import ProyectListItem from "./ProyectListItem";
-import { ProyectType } from "./Proyects";
-import classes from "./ProyectList.module.css"
+import ProyectListItem from "./ProjectListItem";
+import { ProyectType } from "./Projects";
+import classes from "./ProjectList.module.css"
 
 interface Props {
     proyects: ProyectType[]

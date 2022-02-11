@@ -11,9 +11,10 @@ const BookPage: React.FC = () => {
       <img
         className="absolute -z-10  w-full  right-0 scale-[120%] lg:scale-[95%] lg:right-12 lg:top-0 md:top-8 "
         src={bookPage}
+        alt=""
       />
       <div className="z-10 lg:px-12 md:pt-6  pl-16  lg:space-y-6 lg:h-[40rem] lg:pt-16 xl:space-y-12 space-y-2 ">
-        <h1 className=" xl:text-[32px] lg:translate-x-8 text-[24px] lg:my-8 my-2 text-gray z-10">
+        <h1 className=" xl:text-[32px] sedgwick lg:translate-x-8 text-[24px] lg:my-8 my-2 text-gray z-10">
           Hello there
         </h1>
         <p className=" montserrat xl:w-[75%] lg:w-[85%] w-[90%] xl:pl-8 xl:text-[14px] lg:text-[12px] text-[10px] text-gray first-letter:ml-2 first-letter:font-bold">
@@ -36,6 +37,7 @@ const BookPage: React.FC = () => {
                 <img
                   className="inline mr-8 lg:h-8 w-6 lg:w-8 xl:h-12 xl:w-12 "
                   src={process.env.PUBLIC_URL + LOGOSDIR + "github-icon-1.svg"}
+                  alt=""
                 />
               </span>
               Github Profile
@@ -47,6 +49,7 @@ const BookPage: React.FC = () => {
                 <img
                   className="inline mr-8 lg:h-8 w-6 lg:w-10 xl:h-12 xl:w-16"
                   src={process.env.PUBLIC_URL + LOGOSDIR + "linkedin.svg"}
+                  alt=""
                 />
               </span>
               LinkedIn
@@ -58,6 +61,7 @@ const BookPage: React.FC = () => {
                 <img
                   className="inline mr-8 -translate-x-2 lg:h-8 w-6 lg:w-10 xl:h-10 xl:w-16"
                   src={process.env.PUBLIC_URL + LOGOSDIR + "mailwhite.svg"}
+                  alt=""
                 />
               </span>
               rubgued@gmail.com
