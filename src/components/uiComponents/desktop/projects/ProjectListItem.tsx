@@ -1,6 +1,6 @@
 import React from "react";
-import { ProyectType} from "./Proyects";
-import classes from "./ProyectList.module.css";
+import { ProyectType} from "./Projects";
+import classes from "./ProjectList.module.css";
 
 interface Props extends ProyectType {
   children?: React.ReactNode;
@@ -37,7 +37,7 @@ const ProyectListItem: React.FC<Props> = (props: Props) => {
         <h1 className={`${textColor} lg:text-xl text-base`}> {props.name}</h1>
         <a className={`${textColor}`} href={props.website}> {props.website} </a>
       </div>
-      <img className="lg:w-36 w-24 " src={props.logo} />
+      <img className="lg:w-36 w-24 " src={props.logo} alt={props.name + "logo"} />
     </div>
   );
 };

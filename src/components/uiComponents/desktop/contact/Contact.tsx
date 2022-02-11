@@ -101,10 +101,10 @@ const Contact: React.FC = () => {
   return (
     <div className=" flex flex-col justify-center sm:pt-40 md:py-4">
       <div className={`flex flex-row ${ errorMessage ? "justify-around" : " pl-24 " }`}>
-        <h1 className="text-3xl text-gray my-16"> Let's talk! </h1>
+        <h1 className="text-3xl sedgwick text-gray my-16"> Let's talk! </h1>
         {errorMessage ? (
           <div className=" ml-20 rotate-6 animate-ping animate-pulse p-2 z-20 rounded-lg text-gray py-2 bg-tawny-text mt-16">
-            <h1 className="xl:text-2xl lg:mt-8 " > {errorMessage} </h1>
+            <h1 className="xl:text-2xl sedgwick lg:mt-8 " > {errorMessage} </h1>
           </div>
         ) : null}
       </div>
@@ -112,11 +112,12 @@ const Contact: React.FC = () => {
         <div className=" lg:flex lg:flex-row flex flex-col">
           <div className="flex flex-col w-full pl-[8%]">
             <div className="xl:w-[50%] w-[75%] py-8">
-              <h1 className="text-2xl text-gray ml-8"> Name </h1>
+              <h1 className="text-2xl sedgwick text-gray ml-8"> Name </h1>
               <div className="relative group h-20">
                 <img
                   className="absolute h-[100%] group-hover:transition group-hover:scale-105 group-hover:ease-in top-0 z-0"
                   src={process.env.PUBLIC_URL + IMGSDIR + NAMEBG}
+                  alt=""
                 />
                 <input
                   className="text-ink absolute ml-2 top-4 left-12 h-10 lg:w-64 focus:transition focus:shadow-md focus:outline-none p-2 "
@@ -130,12 +131,13 @@ const Contact: React.FC = () => {
               </div>
             </div>
             <div className=" xl:w-[50%] lg:w-[75%] md:w-[80%] py-8">
-              <h1 className="text-2xl text-gray ml-8"> Email </h1>
+              <h1 className="text-2xl sedgwick text-gray ml-8"> Email </h1>
               <div className="relative group h-20">
                 <img
                   ref={messageRef}
                   className="absolute h-[100%] group-hover:transition group-hover:scale-105 group-hover:ease-in top-0 z-0"
                   src={process.env.PUBLIC_URL + IMGSDIR + NAMEBG}
+                  alt=""
                 />
                 <input
                   className="text-ink absolute lg:ml-2 top-4 left-12 h-10 lg:w-64 focus:transition focus:shadow-md focus:outline-none p-2 "
@@ -150,11 +152,12 @@ const Contact: React.FC = () => {
             </div>
           </div>
           <div className="flex flex-col w-[64rem]  h-[20rem] lg:h-auto lg:ml-0 lg:-translate-x-20 xl:-translate-x-56">
-            <h1 className="text-2xl text-gray lg:ml-8 ml-20"> Your message </h1>
+            <h1 className="text-2xl sedgwick text-gray lg:ml-8 ml-20"> Your message </h1>
             <div className="relative pl-8 md:pl-[8rem] lg:pl-0 group h-20">
               <img
                 className="absolute group-hover:transition group-hover:ease-in top-0 z-0"
                 src={process.env.PUBLIC_URL + IMGSDIR + MESSBG}
+                alt=""
               />
               <textarea
                 rows={textAreaRows}

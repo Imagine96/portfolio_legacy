@@ -14,7 +14,9 @@ module.exports = {
       'yellow-card': '#F7DB78',
       'pink-card': '#FC9AB1',
       'blue-card': '#48C4DB',
-      'green-card': '#BAD5B5'
+      'green-card': '#BAD5B5',
+      'black': '#0D0D0D',
+      'mWhite': "#f2f2f2"
     },
     extend: {},
   },

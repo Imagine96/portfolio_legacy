@@ -14,10 +14,6 @@ svg {
   display: inline-block;
 }
 
-h1 {
-  font-family: "Sedgwick Ave", cursive;
-}
-
 .sedgwick {
   font-family: "Sedgwick Ave", cursive;
 }
@@ -71,6 +67,26 @@ body {
   }
   100%{
     opacity: 1;
+  }
+}
+
+.selectedNav{
+  animation: sideNavSelect 300ms ease-in-out forwards;
+}
+
+.unSelectedNav{
+  animation: sideNavUnSelect 300ms ease-in-out forwards;
+}
+
+@keyframes sideNavSelect {
+  100%{
+    background-color: #411931;
+  }
+}
+
+@keyframes sideNavUnSelect {
+  100%{
+    background-color: transparent;
   }
 }
 

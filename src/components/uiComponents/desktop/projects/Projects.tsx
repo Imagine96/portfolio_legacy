@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import ProyectList from "./ProyectsList";
-import ProyectDetails from "./ProyectDetails";
+import ProjectList from "./ProjectsList";
+import ProjectDetails from "./ProjectDetails";
 
 export type ColorType = "yellow" | "pink" | "blue";
 
@@ -119,9 +119,9 @@ const Proyects: React.FC = () => {
         <div id="proyects" className="w-full pt-10 rounded-3xl grid grid-cols-2 grid-rows-1 " >
             <div>
                 <h1 className={`ml-16 mb-4 text-gray text-4xl `} > My work </h1>
-                <ProyectList onProyectSelected={onProyectSelected} proyects={proyects} />
+                <ProjectList onProyectSelected={onProyectSelected} proyects={proyects} />
             </div>
-            <ProyectDetails proyect={proyects[selectedProyect]} />
+            <ProjectDetails proyect={proyects[selectedProyect]} />
         </div>
     )
 }

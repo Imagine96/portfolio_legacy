@@ -35,7 +35,7 @@ const Notes : React.FC = () => {
         position=" right-[5rem] lg:right-[10rem] top-[25rem] lg:top-[20em] xl:top-[20rem] "
         rotation="rotate-[-20deg]"
       >
-        <h1 className="p-2  xl:text-[48px] lg:text-[32px] text-[24px] text-tawny-text lg:-translate-y-10 " > My name is Ruben, </h1>
+        <h1 className="p-2 sedgwick  xl:text-[48px] lg:text-[32px] text-[24px] text-tawny-text lg:-translate-y-10 " > My name is Ruben, </h1>
       </Note>
       <Note
         delay={1}
@@ -43,7 +43,7 @@ const Notes : React.FC = () => {
         position=" right-[2rem] lg:right-[4rem] xl:right-6 top-[35rem] lg:top-[30rem] xl:top-[35rem] "
         rotation=" lg:rotate-12 rotate-3 "
       >
-        <h1 className="p-2 xl:text-[48px] lg:text-[32px] text-[24px] text-tawny-text " > FrontEnd developer. </h1>
+        <h1 className="p-2 sedgwick xl:text-[48px] lg:text-[32px] text-[24px] text-tawny-text " > FrontEnd developer. </h1>
       </Note>
       <Note
         delay={2}

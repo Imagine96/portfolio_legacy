@@ -1,6 +1,6 @@
 import React from "react";
-import { ProyectType } from "./Proyects";
-import classes from "./ProyectDetails.module.css";
+import { ProyectType } from "./Projects";
+import classes from "./ProjectDetails.module.css";
 
 const IMGSDIR = "/images/";
 
@@ -35,7 +35,7 @@ const ProyectDetails: React.FC<Props> = ({ proyect }: Props) => {
           <h1 className={`${textColor} xl:text-3xl lg:text:2xl xl:mt-8 text-xl`}> {proyect.name} </h1>
           <a className={`${textColor}`} > {proyect.website} </a>
         </div>
-        <img className="lg:w-32 w-20" src={proyect.logo} />
+        <img className="lg:w-32 w-20" src={proyect.logo} alt="" />
       </div>
       <div className="flex justify-around gap-4 flex-col items-center lg:px-8 ">
         <p className={`${textColor} text-sm xl:text-base`}>{proyect.description}</p>

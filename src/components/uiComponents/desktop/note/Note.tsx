@@ -37,8 +37,6 @@ const Note: React.FC<Props> = (props: Props) => {
     noteClass = classes.whiteCard;
   }
 
-  console.log(animationDelay)
-
   return (
     <div
       style={{
