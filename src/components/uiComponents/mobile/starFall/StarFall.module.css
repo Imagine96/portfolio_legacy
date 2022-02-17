@@ -9,6 +9,14 @@
   background: linear-gradient(90deg, #fff, transparent);
 }
 
+.dark{
+  background-color: #0D0D0D !important;
+}
+
+.dark::before{
+  background: linear-gradient(90deg, #0D0D0D, transparent) !important;
+}
+
 .falling_star span:nth-child(1) {
   position: absolute;
   width: 2px;
@@ -73,7 +81,7 @@
   left: 50%;
   border-radius: 50%;
   opacity: 0;
-  animation: starFall 2s 1200ms linear infinite;
+  animation: starFall 2s 800ms linear infinite;
 }
 .falling_star span:nth-child(7) {
   position: absolute;
@@ -84,7 +92,7 @@
   right: -40%;
   border-radius: 50%;
   opacity: 0;
-  animation: starFall 2s 980ms linear infinite;
+  animation: starFall 2s 680ms linear infinite;
 }
 .falling_star span:nth-child(8) {
   position: absolute;
@@ -95,7 +103,7 @@
   right: -40%;
   border-radius: 50%;
   opacity: 0;
-  animation: starFall 2s 637ms linear infinite;
+  animation: starFall 2s 1037ms linear infinite;
 }
 .falling_star span:nth-child(9) {
   position: absolute;
@@ -106,7 +114,7 @@
   right: -20%;
   border-radius: 50%;
   opacity: 0;
-  animation: starFall 2s 1580ms linear infinite;
+  animation: starFall 2s 1280ms linear infinite;
 }
 .falling_star span:nth-child(10) {
   position: absolute;
@@ -118,6 +126,18 @@
   border-radius: 50%;
   opacity: 0;
   animation: starFall 2s linear infinite;
+}
+
+.falling_star span:nth-child(11) {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: #fff;
+  top: 10%;
+  left: 95%;
+  border-radius: 50%;
+  opacity: 0;
+  animation: starFall 2s 700ms linear infinite;
 }
 
 @keyframes starFall {

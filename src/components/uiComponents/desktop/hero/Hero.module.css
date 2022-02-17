@@ -24,12 +24,12 @@
 .questions_2{
     opacity: 0;
     transform: translateX(-6rem);
-    animation: intro 1s 1.5s ease-in-out forwards;
+    animation: intro 1s 1.8s ease-in-out forwards;
 }
 .questions_3{
     opacity: 0;
     transform: translateX(-6rem);
-    animation: intro 1s 3s ease-in-out forwards;
+    animation: intro 1s 3.4s ease-in-out forwards;
 }
 
 @keyframes write {

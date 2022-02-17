@@ -39,7 +39,9 @@ const Hero: React.FC = () => {
   ];
 
   const onEnded = () => {
-    document.getElementById("about")?.scrollIntoView()
+    document.getElementById("about")?.scrollIntoView({
+      behavior: "smooth"
+    })
   }
 
   return (

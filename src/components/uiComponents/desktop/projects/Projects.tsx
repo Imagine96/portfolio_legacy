@@ -2,9 +2,9 @@ import React, {useState} from "react";
 import ProjectList from "./ProjectsList";
 import ProjectDetails from "./ProjectDetails";
 
-export type ColorType = "yellow" | "pink" | "blue";
+export type ColorType = "yellow" | "pink" | "blue" | "white";
 
-export type ProyectImgType = {
+export type ProjectImgType = {
     img: string;
     alt: string;
     text: string;
@@ -12,102 +12,43 @@ export type ProyectImgType = {
     on: string
 }
 
-export type ProyectType = {
+export type ProjectType = {
   logo: string;
   name: string;
-  website: string;
   type: ColorType;
+  link?: string;
+  state?: string;
   description?: string;
-  imgs?: ProyectImgType[];
+  imgs?: ProjectImgType[];
 };
 
-const EXTRASDIR = "/images/extras/";
-const PLACEHOLDERSDIR = "/images/logos/placeholders/";
+const PROYECTSDEMO: ProjectType[] = [
+  {
+    name: "Tribox",
+    logo: "logo-tribox-VERTICAL.png",
+    state: "Check it out!",
+    link: "https://triboxonline.com",
+    type: "blue"
+  },
+  {
+    name: "Gregarios",
+    type: "pink",
+    logo: "gregarios-blanco-1-1024x375.png ",
+    state: "Check it out!",
+    link: "https://gregatios.com"
+  },
+  {
+    name: "Magic Mash",
+    logo: "magicmashlogo.jpeg",
+    state: "Development",
+    type: "yellow"
+  },
+];
 
-const PROYECTSDEMO: ProyectType[] = [
-    {
-      name: "Test Name",
-      website: "www.google.com",
-      logo: process.env.PUBLIC_URL + PLACEHOLDERSDIR + "logoipsum-logo-6.svg",
-      type: "yellow",
-      imgs: [{
-          img: process.env.PUBLIC_URL + EXTRASDIR + "sunder-muthukumaran-fd6K_OFlnRA-unsplash-2.jpg",
-          alt: "cilinder image",
-          text: "https://unsplash.com/@sunder_2k25?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
-          by: "Sunder Muthukumaran",
-          on: "https://unsplash.com/s/photos/ui?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-      },{
-        img: process.env.PUBLIC_URL + EXTRASDIR + "sunder-muthukumaran-n7eJHQwefeI-unsplash-2.jpg",
-        alt: "cilinder image",
-        text: "https://unsplash.com/@sunder_2k25?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
-        by: "Sunder Muthukumaran",
-        on: "https://unsplash.com/s/photos/ui?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-    },{
-        img: process.env.PUBLIC_URL + EXTRASDIR + "william-felker-fqkrXYMosT4-unsplash-2.jpg",
-        alt: "cilinder image",
-        text: "https://unsplash.com/@sunder_2k25?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
-        by: "Sunder Muthukumaran",
-        on: "https://unsplash.com/s/photos/ui?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-    }],
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida lacus vitae velit facilisis hendrerit. Pellentesque vehicula accumsan magna, at cursus orci ultricies pretium. Ut ut ligula et odio mattis sollicitudin. Etiam dignissim vel nibh a iaculis. Integer nec lorem ac nibh congue pretium at vel elit. Suspendisse iaculis sagittis urna. Aenean cursus eget mi non semper. Curabitur in neque diam. Etiam aliquet egestas velit id gravida. Proin luctus euismod tellus, eget ultrices diam pretium eu."
-    },
-    {
-      name: "Test 2 Name",
-      website: "www.google.com",
-      logo: process.env.PUBLIC_URL + PLACEHOLDERSDIR + "logoipsum-logo-8.svg",
-      type: "blue",
-      imgs: [{
-        img: process.env.PUBLIC_URL + EXTRASDIR + "sunder-muthukumaran-fd6K_OFlnRA-unsplash-2.jpg",
-        alt: "cilinder image",
-        text: "https://unsplash.com/@sunder_2k25?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
-        by: "Sunder Muthukumaran",
-        on: "https://unsplash.com/s/photos/ui?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-    },{
-      img: process.env.PUBLIC_URL + EXTRASDIR + "sunder-muthukumaran-n7eJHQwefeI-unsplash-2.jpg",
-      alt: "cilinder image",
-      text: "https://unsplash.com/@sunder_2k25?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
-      by: "Sunder Muthukumaran",
-      on: "https://unsplash.com/s/photos/ui?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-  },{
-      img: process.env.PUBLIC_URL + EXTRASDIR + "william-felker-fqkrXYMosT4-unsplash-2.jpg",
-      alt: "cilinder image",
-      text: "https://unsplash.com/@sunder_2k25?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
-      by: "Sunder Muthukumaran",
-      on: "https://unsplash.com/s/photos/ui?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-  }],
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida lacus vitae velit facilisis hendrerit. Pellentesque vehicula accumsan magna, at cursus orci ultricies pretium. Ut ut ligula et odio mattis sollicitudin. Etiam dignissim vel nibh a iaculis. Integer nec lorem ac nibh congue pretium at vel elit. Suspendisse iaculis sagittis urna. Aenean cursus eget mi non semper. Curabitur in neque diam. Etiam aliquet egestas velit id gravida. Proin luctus euismod tellus, eget ultrices diam pretium eu."
-    },
-    {
-      name: "Test 3 Name",
-      website: "www.google.com",
-      logo: process.env.PUBLIC_URL + PLACEHOLDERSDIR + "logoipsum-logo-9.svg",
-      type: "pink",
-      imgs: [{
-        img: process.env.PUBLIC_URL + EXTRASDIR + "sunder-muthukumaran-fd6K_OFlnRA-unsplash-2.jpg",
-        alt: "cilinder image",
-        text: "https://unsplash.com/@sunder_2k25?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
-        by: "Sunder Muthukumaran",
-        on: "https://unsplash.com/s/photos/ui?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-    },{
-      img: process.env.PUBLIC_URL + EXTRASDIR + "sunder-muthukumaran-n7eJHQwefeI-unsplash-2.jpg",
-      alt: "cilinder image",
-      text: "https://unsplash.com/@sunder_2k25?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
-      by: "Sunder Muthukumaran",
-      on: "https://unsplash.com/s/photos/ui?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-  },{
-      img: process.env.PUBLIC_URL + EXTRASDIR + "william-felker-fqkrXYMosT4-unsplash-2.jpg",
-      alt: "cilinder image",
-      text: "https://unsplash.com/@sunder_2k25?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText",
-      by: "Sunder Muthukumaran",
-      on: "https://unsplash.com/s/photos/ui?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-  }],
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida lacus vitae velit facilisis hendrerit. Pellentesque vehicula accumsan magna, at cursus orci ultricies pretium. Ut ut ligula et odio mattis sollicitudin. Etiam dignissim vel nibh a iaculis. Integer nec lorem ac nibh congue pretium at vel elit. Suspendisse iaculis sagittis urna. Aenean cursus eget mi non semper. Curabitur in neque diam. Etiam aliquet egestas velit id gravida. Proin luctus euismod tellus, eget ultrices diam pretium eu."
-    }
-  ];
 
-const Proyects: React.FC = () => {
+const Projects: React.FC = () => {
 
-    const [ proyects ] = useState<ProyectType[]>(PROYECTSDEMO)
+    const [ proyects ] = useState<ProjectType[]>(PROYECTSDEMO)
     const [selectedProyect, setSelectedProyect] = useState<number>(0)
 
     const onProyectSelected = (index: number) => {
@@ -126,4 +67,4 @@ const Proyects: React.FC = () => {
     )
 }
 
-export default Proyects
+export default Projects

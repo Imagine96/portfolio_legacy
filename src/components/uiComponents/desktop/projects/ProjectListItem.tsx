@@ -1,8 +1,10 @@
 import React from "react";
-import { ProyectType} from "./Projects";
+import { ProjectType} from "./Projects";
 import classes from "./ProjectList.module.css";
 
-interface Props extends ProyectType {
+const LOGOSDIR = "/images/logos/"
+
+interface Props extends ProjectType {
   children?: React.ReactNode;
   index: number;
   onSelected: (index: number) => void
@@ -10,7 +12,7 @@ interface Props extends ProyectType {
 
 const IMGSDIR = "/images/";
 
-const ProyectListItem: React.FC<Props> = (props: Props) => {
+const ProjectListItem: React.FC<Props> = (props: Props) => {
 
   let cardColorClass = classes.item;
   let textColor = "text-ink"
@@ -35,11 +37,11 @@ const ProyectListItem: React.FC<Props> = (props: Props) => {
     >
       <div className="flex flex-col items-start justify-center w-full h-full " >
         <h1 className={`${textColor} lg:text-xl text-base`}> {props.name}</h1>
-        <a className={`${textColor}`} href={props.website}> {props.website} </a>
+        <a className={`${textColor}`} href={props.link}> {props.link} </a>
       </div>
-      <img className="lg:w-36 w-24 " src={props.logo} alt={props.name + "logo"} />
+      <img className="lg:w-20 max-h-[6rem] w-24 " src={process.env.PUBLIC_URL + LOGOSDIR + props.logo} alt={props.name + "logo"} />
     </div>
   );
 };
 
-export default ProyectListItem;
+export default ProjectListItem;

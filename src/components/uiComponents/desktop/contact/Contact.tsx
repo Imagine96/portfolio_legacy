@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import checkStatus from "../../../../utils/formValidation";
-import emailjs from "@emailjs/browser"
-
+import emailjs from "@emailjs/browser";
 
 const IMGSDIR = "/images/";
 const NAMEBG = "nameInput.png";
@@ -26,7 +25,7 @@ const Contact: React.FC = () => {
   const [textAreaRows, setTextAreaCols] = useState<number>(5);
 
   const messageRef = useRef<HTMLImageElement | null>(null);
-  const formRef = useRef<HTMLFormElement | null>(null) 
+  const formRef = useRef<HTMLFormElement | null>(null);
 
   const onInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -54,17 +53,25 @@ const Contact: React.FC = () => {
       setErrorMessage(undefined);
       setInputStatus({ name: "", email: "", message: "" });
 
-      try{
-        emailjs.sendForm(process.env.REACT_APP_MAILJS_SERVICE_ID || " ", process.env.REACT_APP_MAILJS_TEMPLATE_ID || " ", formRef.current, process.env.REACT_APP_MAILJS_USER_ID || " ")
-        .then(result => {
-          console.log(result.text)
-        }, (err) => {
-          throw err
-        })
-      }catch(err){
-        console.log(err)
+      try {
+        emailjs
+          .sendForm(
+            process.env.REACT_APP_MAILJS_SERVICE_ID || " ",
+            process.env.REACT_APP_MAILJS_TEMPLATE_ID || " ",
+            formRef.current,
+            process.env.REACT_APP_MAILJS_USER_ID || " ",
+          )
+          .then(
+            (result) => {
+              console.log(result.text);
+            },
+            (err) => {
+              throw err;
+            },
+          );
+      } catch (err) {
+        console.log(err);
       }
-
     } else {
     }
   };
@@ -100,13 +107,10 @@ const Contact: React.FC = () => {
 
   return (
     <div className=" flex flex-col justify-center sm:pt-40 md:py-4">
-      <div className={`flex flex-row ${ errorMessage ? "justify-around" : " pl-24 " }`}>
-        <h1 className="text-3xl sedgwick text-gray my-16"> Let's talk! </h1>
-        {errorMessage ? (
-          <div className=" ml-20 rotate-6 animate-ping animate-pulse p-2 z-20 rounded-lg text-gray py-2 bg-tawny-text mt-16">
-            <h1 className="xl:text-2xl sedgwick lg:mt-8 " > {errorMessage} </h1>
-          </div>
-        ) : null}
+      <div
+        className={`flex flex-row pl-24`}
+      >
+        <h1 id="contact" className="text-3xl sedgwick text-gray my-16"> Let's talk! </h1>
       </div>
       <form ref={formRef} className="-mt-10" onSubmit={(e) => onSubmit(e)}>
         <div className=" lg:flex lg:flex-row flex flex-col">
@@ -124,6 +128,7 @@ const Contact: React.FC = () => {
                   placeholder="Your Name"
                   value={inputStatus?.name}
                   onChange={(e) => onInputChange(e, "name")}
+                  required={true}
                   type="text"
                   name="name"
                   id="name-input"
@@ -143,6 +148,7 @@ const Contact: React.FC = () => {
                   className="text-ink absolute lg:ml-2 top-4 left-12 h-10 lg:w-64 focus:transition focus:shadow-md focus:outline-none p-2 "
                   placeholder="your email"
                   value={inputStatus?.email}
+                  required={true}
                   onChange={(e) => onInputChange(e, "email")}
                   type="email"
                   name="email"
@@ -152,7 +158,10 @@ const Contact: React.FC = () => {
             </div>
           </div>
           <div className="flex flex-col w-[64rem]  h-[20rem] lg:h-auto lg:ml-0 lg:-translate-x-20 xl:-translate-x-56">
-            <h1 className="text-2xl sedgwick text-gray lg:ml-8 ml-20"> Your message </h1>
+            <h1 className="text-2xl sedgwick text-gray lg:ml-8 ml-20">
+              {" "}
+              Your message{" "}
+            </h1>
             <div className="relative pl-8 md:pl-[8rem] lg:pl-0 group h-20">
               <img
                 className="absolute group-hover:transition group-hover:ease-in top-0 z-0"
@@ -161,6 +170,7 @@ const Contact: React.FC = () => {
               />
               <textarea
                 rows={textAreaRows}
+                required={true}
                 className="text-ink absolute top-10 w-96 lg:ml-2 lg:top-8 translate-x-20 lg:translate-x-16  focus:transition focus:shadow-md focus:outline-none p-6 "
                 value={inputStatus?.message}
                 placeholder="your message"
@@ -192,4 +202,3 @@ const Contact: React.FC = () => {
 };
 
 export default Contact;
-

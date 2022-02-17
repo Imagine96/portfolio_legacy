@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Marker from "./Marker";
 
+const NAVSID = ["hero", "about-me", "dummy", "contact"];
+
 const SideNav: React.FC = () => {
   const [markers, setActiveMarker] = useState<boolean[]>([
     true,
@@ -11,33 +13,38 @@ const SideNav: React.FC = () => {
 
   const [markersHeight, setMarkerHeight] = useState<number[]>([]);
 
-  const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const onNavClicked = (index: number) => {
 
-  const onNavClicked = (height: number) => {
-    window.scrollTo(0, height + 100)
-  }
+    if(index === 0){
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }else{
+      window.scrollTo({
+        top: markersHeight[index] + 200,
+        behavior: "smooth"
+      });
+    }
+  };
 
   const handleScroll = () => {
+    let newMarkers = [false, false, false, false];
 
-    setScrollPosition(window.scrollY);
-
-    let newMarkers = markers;
+    let marker: number = 0;
 
     markersHeight.forEach((item, index) => {
-      if (window.scrollY >= markersHeight[1]) {
-        if (item <= window.scrollY) {
-          newMarkers[index] = true;
-          newMarkers[0] = false;
-        } else {
-          newMarkers[index] = false;
+      if (item < window.scrollY) {
+        if (index !== marker) {
+          marker = index;
         }
-      } else {
-          newMarkers = [true, false, false, false];
-      }
-      if (newMarkers !== markers) {
-        setActiveMarker(newMarkers);
       }
     });
+
+    newMarkers[marker] = true;
+    if (newMarkers !== markers) {
+      setActiveMarker(newMarkers);
+    }
   };
 
   useEffect(() => {
@@ -45,7 +52,11 @@ const SideNav: React.FC = () => {
     let sectionHeights: number[] = [];
 
     markers.forEach((marker, index) => {
-      sectionHeights.push(screenSize/2 * index + 100);
+      if (index === 0) {
+        sectionHeights.push(0);
+      } else {
+        sectionHeights.push(screenSize * index - 200);
+      }
     });
 
     setMarkerHeight(sectionHeights);
@@ -56,11 +67,20 @@ const SideNav: React.FC = () => {
     };
   }, [markers]);
 
-
   return (
-    <div className={` flex flex-col items-center justify-around fixed h-[25vh] top-[20rem] -translate-y-[50%] left-4 z-20`}>
+    <div
+      className={` flex flex-col items-center justify-around absolute h-[25vh] top-[50%] -translate-y-[50%] left-4 z-50`}
+    >
       {markers.map((status, index) => {
-        return <Marker onClick={onNavClicked} height={markersHeight[index]} key={index} current={status} />;
+        return (
+          <Marker
+            index={index}
+            onClick={onNavClicked}
+            height={markersHeight[index]}
+            key={index}
+            current={status}
+          />
+        );
       })}
     </div>
   );

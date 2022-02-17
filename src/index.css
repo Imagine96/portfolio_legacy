@@ -37,7 +37,6 @@ body {
 * {
   scrollbar-width: auto;
   scrollbar-color: rgb(28 28 28) rgba(28 28 28 0);
-  scroll-behavior: smooth;
 }
 
 *::-webkit-scrollbar {
@@ -74,19 +73,42 @@ body {
   animation: sideNavSelect 300ms ease-in-out forwards;
 }
 
+.selectedNavDark{
+  animation: sideNavSelectDark 300ms ease-in-out forwards;
+}
+
 .unSelectedNav{
   animation: sideNavUnSelect 300ms ease-in-out forwards;
 }
 
+@keyframes sideNavSelectDark {
+  100%{
+    background-color: #1C1C1C;
+  }
+}
+
 @keyframes sideNavSelect {
   100%{
-    background-color: #411931;
+    background-color: rgb(248 242 246);
   }
 }
 
 @keyframes sideNavUnSelect {
   100%{
     background-color: transparent;
+  }
+}
+
+@keyframes starFallOposite {
+  0% {
+    transform: rotate(140deg) translateX(0);
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(140deg) translateX(-1000px);
   }
 }
 
