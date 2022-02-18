@@ -1,19 +1,21 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import Hero from "../../uiComponents/mobile/hero/Hero";
-import AboutMe from "../../uiComponents/mobile/aboutMe/AboutMe";
-import MyWorkSection from "../../uiComponents/mobile/MyWorkSection/MyWork";
-import Contact from "../../uiComponents/mobile/contact/Contact";
-import Footer from "../../uiComponents/mobile/footer/Footer";
 
 const MobileClient: React.FC = () => {
+
+  const AboutMe = lazy(() => import("../../uiComponents/mobile/aboutMe/AboutMe"))
+  const Contact = lazy(() => import("../../uiComponents/mobile/contact/Contact"))
+  const MyWorkSection = lazy(() => import("../../uiComponents/mobile/MyWorkSection/MyWork"))
 
   return (
     <>
       <main className="w-full overflow-x-hidden bg-mWhite flex flex-col items-center justify-center">
         <Hero />
-        <AboutMe />
-        <MyWorkSection oposite={true} color="black" />
-        <Contact />
+        <Suspense fallback={null} > 
+          <AboutMe />
+          <MyWorkSection oposite={true} color="black" />
+          <Contact />
+        </Suspense>
       </main>
     </>
   );

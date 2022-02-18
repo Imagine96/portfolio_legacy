@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
+import classes from "./List.module.css"
 
 interface Project {
   name: string;
@@ -115,7 +116,7 @@ const List: React.FC = () => {
   });
 
   return (
-    <div className="min-w-[100vw] overflow-hidden flex flex-row items-center justify-center flex-wrap-reverse relative h-64 mx-auto">
+    <div className="min-w-[100vw] overflow-hidden flex flex-row items-center justify-center flex-wrap-reverse h-64 mx-auto">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           custom={direction}
@@ -142,6 +143,7 @@ const List: React.FC = () => {
         >
           {listItems[current]}
         </motion.div>
+        <p className={` absolute bottom-[5vh] montserrat w-fit text-gray ${classes.arrowLeft}`} >&#x2192;</p>
       </AnimatePresence>
     </div>
   );

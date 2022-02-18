@@ -3,7 +3,6 @@ import StarFall from "../starFall/StarFall";
 import classes from "../starFall/StarFall.module.css";
 import SideNav from "../sideNav/SideNav";
 import List from "./WorkList/List";
-import WhiteGrass from "../WhiteGrass"
 
 interface Props{
     color?: string,
@@ -24,7 +23,6 @@ const MyWorkSection: React.FC<Props> = (props) => {
             </div>
             <StarFall containerRef={containerRef} oposite={props.oposite} />
             <SideNav />
-            <WhiteGrass grassClasses={grassClasses} />
         </div>
     )
 }

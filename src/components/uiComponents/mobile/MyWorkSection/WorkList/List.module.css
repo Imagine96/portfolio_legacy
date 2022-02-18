@@ -1,0 +1,11 @@
+.arrowLeft{
+    animation: swap 1s ease-in-out .5s infinite;
+}
+
+@keyframes swap {
+    0%{
+        transform: translateX(-300px);
+    }100%{
+        transform: translateX(300px);
+    }
+}
