@@ -50,6 +50,7 @@ const DATA: Project[] = [
     name: "Gregarios",
     logo: "gregarios-blanco-1-1024x375.png ",
     state: "Check it out!",
+    link: "https://gregarioscc.com"
   },
   {
     name: "Magic Mash",
