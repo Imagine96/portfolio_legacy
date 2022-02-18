@@ -18,26 +18,36 @@ const BookPage: React.FC = () => {
           Hello there
         </h1>
         <p className=" montserrat xl:w-[75%] lg:w-[85%] 2xl:pl-20 w-[90%] xl:pl-8 xl:text-[14px] 2xl:text-[18px] lg:text-[12px] text-[10px] text-gray first-letter:ml-2 first-letter:font-bold">
-          My name is Rubén, front end developer and my passion is bringing ideas
-          and designs to the internet in the form of handcrafted websites and
-          webapps because I see in it more than an essential business tool for
-          sales and marketing, a form of expression not just for the business
-          behind it, but also for the designer who dreams it and the developer
-          who conceives it.
+          I’m passionate about bringing ideas and designs to the
+          internet in the form of handcrafted websites and webapps because I see
+          in it more than an essential business tool for sales and marketing, a
+          form of expression not just for the business behind it, but also for
+          the designer who dreams it and the developer who conceives it.
           <br /> <br />I specialize in building user interfaces and client-side
           functionalities and manage html and different css and js tools and
           frameworks, which ensures greater scalability and customization even
           after the final product is delivered
           <br />
           <br />
-          Make shure to check this site from your mobile as well for other experience ;)<br/>
-          <span className="montesrrat text-xs " > This portfolio is a work in progress </span>
+          Make shure to check this site from your mobile as well for other
+          experience ;)
+          <br />
+          <span className="montesrrat text-xs 3xl:text-base ">
+            {" "}
+            This portfolio is a work in progress{" "}
+          </span>
         </p>
-        <div className="2xl:h-52 xl:h-40 xl:flex xl:flex-col xl:flex-wrap 2xl:pl-20 lg:pt-6 2xl:space-y-6 lg:space-y-4 space-y-1 z-10">
+        <div className="2xl:h-52 xl:h-40 xl:flex xl:flex-col xl:flex-wrap 2xl:pl-20 lg:pt-6 2xl:space-y-6 lg:space-y-4 xl:pt-10 space-y-1 z-10">
           <div className="px-4 ">
-            <a href="https://github.com/Imagine96" target="_blank" className="montserrat md:text-[12px] lg:text-sm text-gray">
+            <a
+              href="https://github.com/Imagine96"
+              target="_blank"
+              className="montserrat md:text-[12px] lg:text-sm text-gray"
+            >
               <span>
                 <img
+                  height={"20px"}
+                  width={"24px"}
                   className="inline mr-8 lg:h-8 w-6 lg:w-8 xl:h-12 xl:w-12 "
                   src={process.env.PUBLIC_URL + LOGOSDIR + "github-icon-1.svg"}
                   alt=""
@@ -47,9 +57,15 @@ const BookPage: React.FC = () => {
             </a>
           </div>
           <div className="px-4 ">
-            <a href="https://www.linkedin.com/in/ruben-guedes-732b64219" target="_blank" className="montserrat md:text-[12px] lg:text-sm text-gray">
+            <a
+              href="https://www.linkedin.com/in/ruben-guedes-732b64219"
+              target="_blank"
+              className="montserrat md:text-[12px] lg:text-sm text-gray"
+            >
               <span>
                 <img
+                  height={"20px"}
+                  width={"24px"}
                   className="inline mr-8 lg:h-8 w-6 lg:w-10 xl:h-12 xl:w-16"
                   src={process.env.PUBLIC_URL + LOGOSDIR + "linkedin.svg"}
                   alt=""
@@ -59,9 +75,14 @@ const BookPage: React.FC = () => {
             </a>
           </div>
           <div className="px-4 ">
-            <a href="#contact" className="montserrat md:text-[12px] lg:text-sm text-gray">
+            <a
+              href="#contact"
+              className="montserrat md:text-[12px] lg:text-sm text-gray"
+            >
               <span>
                 <img
+                  height={"20px"}
+                  width={"24px"}
                   className="inline mr-8 -translate-x-2 lg:h-8 w-6 lg:w-10 xl:h-10 xl:w-16"
                   src={process.env.PUBLIC_URL + LOGOSDIR + "mailwhite.svg"}
                   alt=""
