@@ -106,7 +106,7 @@ const Contact: React.FC = () => {
   }, []);
 
   return (
-    <div className=" flex flex-col justify-center bg-yellow-card sm:pt-40 md:py-4">
+    <div className=" flex flex-col justify-center sm:pt-40 md:py-4">
       <div
         className={`flex flex-row 2xl:pt-40 pl-24`}
       >
