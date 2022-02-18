@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./Hero.module.css";
 
+
+
 const Hero: React.FC = () => {
+
+  const [finishedIntro, setFinishedIntro] = useState<boolean>(false)
 
   const hiText: JSX.IntrinsicElements["svg"][] = [
     <svg
@@ -38,26 +42,67 @@ const Hero: React.FC = () => {
     </svg>,
   ];
 
-  const onEnded = () => {
-    document.getElementById("about")?.scrollIntoView({
-      behavior: "smooth"
-    })
+  const ARROW = (
+    <svg
+      onClick={ () => window.scrollTo({
+        behavior: "smooth",
+        top: window.innerHeight*1.1
+      }) }
+      className={(finishedIntro ? "  " : " opacity-0 ") + " cursor-pointer transition duration-1000 -translate-x-28 translate-y-20 "}
+      enableBackground="new 0 0 43.1 85.9"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 43.1 85.9"
+      xmlSpace="preserve"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={`${classes.st0} ${classes.draw_arrow}`}
+        d="M11.3,2.5c-5.8,5-8.7,12.7-9,20.3s2,15.1,5.3,22c6.7,14,18,25.8,31.7,33.1"
+      />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={`${classes.draw_arrow} ${classes.tail_1}"`}
+        d="M40.6,78.1C39,71.3,37.2,64.6,35.2,58"
+      />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={`${classes.draw_arrow} ${classes.tail_2}"`}
+        d="M39.8,78.5c-7.2,1.7-14.3,3.3-21.5,4.9"
+      />
+    </svg>
+  );
+
+  const onIntroEnded = () => {
+    setFinishedIntro(true)
   }
 
   return (
     <div
       className={`${classes.container} w-full h-[100vh] flex flex-col justify-center items-center relative shadow-md`}
     >
-      <div className=" -translate-x-[24rem] " >{hiText.map((item) => item)}</div>
-      <h2 className={` ${classes.questions_1} montserrat text-left font-bold text-[48px] text-gray -translate-y-[5rem]  `}>
+      <div className=" -translate-x-[24rem] ">{hiText.map((item) => item)}</div>
+      <h2
+        className={` ${classes.questions_1} montserrat text-left font-bold text-[48px] text-gray -translate-y-[5rem]  `}
+      >
         <br />
         Have an idea?
         <br />
         <span className={` ${classes.questions_2} ml-8 `}>For the web?</span>
       </h2>
-      <h2 onAnimationEnd={onEnded} className={` ${classes.questions_3} montserrat font-bold text-[48px] text-gray `}>
+      <h2
+        onAnimationEnd={onIntroEnded}
+        className={` ${classes.questions_3} montserrat font-bold text-[48px] text-gray `}
+      >
         Let`s talk!
       </h2>
+      {ARROW}
     </div>
   );
 };

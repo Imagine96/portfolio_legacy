@@ -17,9 +17,9 @@ const MyWorkSection: React.FC<Props> = (props) => {
     const containerRef = useRef<HTMLDivElement>(null)
 
     return(
-        <div id="work" ref={containerRef} className={`${classes.falling_star}  min-h-screen relative overflow-hidden w-full bg-${props.color} `} >
-            <div className="absolute w-full h-full justify-center" >
-                <h1 className="montserrat ml-32 text-3xl my-32 text-mWhite font-bold " > Previus Work </h1>
+        <div id="work" ref={containerRef} className={`${classes.falling_star}  min-h-screen md:h-[130vh] relative overflow-hidden w-full bg-${props.color} `} >
+            <div className="absolute w-full h-full z-20 justify-center" >
+                <h1 className="montserrat ml-32 md:text-center md:mr-12 text-3xl my-32 text-mWhite font-bold " > Previus Work </h1>
                 <List />
             </div>
             <StarFall containerRef={containerRef} oposite={props.oposite} />

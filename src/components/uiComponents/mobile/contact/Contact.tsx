@@ -13,12 +13,12 @@ const Contact: React.FC = () => {
     const containerRef = useRef<HTMLDivElement | null>(null)
 
     return(
-        <div className={` ${classes.falling_star} overflow-hidden min-h-[750px] w-full relative flex flex-col pl-8 pt-12`} id="contact" >            
+        <div className={` ${classes.falling_star} overflow-hidden min-h-[750px] md:h-[160vh] w-full relative flex flex-col pl-8 pt-12`} id="contact" >            
             <StarFall darkStars={true} containerRef={containerRef} />
             <h1 className="montserrat text-3xl font-bold sha" > Contact </h1>
             <h3 className="text-xl montserrat my-4" > Get in touch! </h3>
             <Form />
-            <img className="absolute scale-150 bottom-24 translate-y-2 z-0 left-20 " src={process.env.PUBLIC_URL + TREE} alt="tree" />
+            <img className="absolute scale-150 md:scale-[125%] bottom-24 z-0 translate-y-2 left-20 md:left-30 " src={process.env.PUBLIC_URL + TREE} alt="tree" />
             <object className="w-[110%] absolute top-[40%] -translate-x-12 " type="image/svg+xml" data={process.env.PUBLIC_URL + OWLS}>svg-animation</object>
             <SideNav />
         </div>

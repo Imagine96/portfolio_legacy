@@ -18,7 +18,11 @@ module.exports = {
       'black': '#0D0D0D',
       'mWhite': "#f2f2f2"
     },
-    extend: {},
+    extend: {
+      screens:{
+        "3xl": "1920px"
+      }
+    },
   },
   plugins: [],
 }

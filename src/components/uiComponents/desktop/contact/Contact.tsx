@@ -106,17 +106,17 @@ const Contact: React.FC = () => {
   }, []);
 
   return (
-    <div className=" flex flex-col justify-center sm:pt-40 md:py-4">
+    <div className=" flex flex-col justify-center bg-yellow-card sm:pt-40 md:py-4">
       <div
-        className={`flex flex-row pl-24`}
+        className={`flex flex-row 2xl:pt-40 pl-24`}
       >
-        <h1 id="contact" className="text-3xl sedgwick text-gray my-16"> Let's talk! </h1>
+        <h1 id="contact" className="text-3xl 2xl:text-[4rem] sedgwick text-gray my-16 2xl:my-20"> Let's talk! </h1>
       </div>
       <form ref={formRef} className="-mt-10" onSubmit={(e) => onSubmit(e)}>
         <div className=" lg:flex lg:flex-row flex flex-col">
           <div className="flex flex-col w-full pl-[8%]">
             <div className="xl:w-[50%] w-[75%] py-8">
-              <h1 className="text-2xl sedgwick text-gray ml-8"> Name </h1>
+              <h1 className="text-2xl 2xl:text-3xl sedgwick text-gray ml-8"> Name </h1>
               <div className="relative group h-20">
                 <img
                   className="absolute h-[100%] group-hover:transition group-hover:scale-105 group-hover:ease-in top-0 z-0"
@@ -136,7 +136,7 @@ const Contact: React.FC = () => {
               </div>
             </div>
             <div className=" xl:w-[50%] lg:w-[75%] md:w-[80%] py-8">
-              <h1 className="text-2xl sedgwick text-gray ml-8"> Email </h1>
+              <h1 className="text-2xl 2xl:text-3xl sedgwick text-gray ml-8"> Email </h1>
               <div className="relative group h-20">
                 <img
                   ref={messageRef}
@@ -158,7 +158,7 @@ const Contact: React.FC = () => {
             </div>
           </div>
           <div className="flex flex-col w-[64rem]  h-[20rem] lg:h-auto lg:ml-0 lg:-translate-x-20 xl:-translate-x-56">
-            <h1 className="text-2xl sedgwick text-gray lg:ml-8 ml-20">
+            <h1 className="text-2xl 2xl:text-3xl sedgwick text-gray lg:ml-8 ml-20">
               {" "}
               Your message{" "}
             </h1>
@@ -171,7 +171,7 @@ const Contact: React.FC = () => {
               <textarea
                 rows={textAreaRows}
                 required={true}
-                className="text-ink absolute top-10 w-96 lg:ml-2 lg:top-8 translate-x-20 lg:translate-x-16  focus:transition focus:shadow-md focus:outline-none p-6 "
+                className="text-ink absolute resize-none top-10 w-96 lg:ml-2 lg:top-8 translate-x-20 lg:translate-x-16  focus:transition focus:shadow-md focus:outline-none p-6 "
                 value={inputStatus?.message}
                 placeholder="your message"
                 onChange={(e) => onInputChange(e, "message")}
@@ -183,17 +183,17 @@ const Contact: React.FC = () => {
         </div>
         <div className=" align-baseline flex flex-row justify-around items-center ">
           <button
-            className="shadow-md w-32 bg-green-card rounded-xl p-4 hover:transition hover:shadow-xl hover:ease-in hover:scale-105"
+            className="shadow-md w-32 2xl:w-44 bg-green-card rounded-xl p-4 hover:transition hover:shadow-xl hover:ease-in hover:scale-105"
             type="submit"
           >
-            <p className=" sedgwick ">Submit</p>
+            <p className=" 2xl:w-44 sedgwick ">Submit</p>
           </button>
           <button
-            className="shadow-md w-32 group bg-pink-card rounded-xl p-4 hover:transition hover:shadow-xl hover:ease-in hover:scale-105"
+            className="shadow-md w-32 2xl:w-44 group bg-pink-card rounded-xl p-4 hover:transition hover:shadow-xl hover:ease-in hover:scale-105"
             type="reset"
             onClick={() => onReset()}
           >
-            <p className=" sedgwick group-hover:scale-y-105 ">Reset</p>
+            <p className=" sedgwick 2xl:text-lg group-hover:scale-y-105 ">Reset</p>
           </button>
         </div>
       </form>

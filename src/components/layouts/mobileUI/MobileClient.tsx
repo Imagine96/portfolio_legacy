@@ -14,7 +14,6 @@ const MobileClient: React.FC = () => {
         <AboutMe />
         <MyWorkSection oposite={true} color="black" />
         <Contact />
-        <Footer />
       </main>
     </>
   );
