@@ -9,7 +9,7 @@ const DesktopClient: React.FC = () => {
   return (
     <>
       <Notes />
-      <main className="w-full overflow-hidden">
+      <main className="w-full desktop overflow-hidden">
         <div className="w-full overlay overflow-hidden 2xl:mx-auto space-y-8 relative pb-10 backdrop-blur-md bg-ink bg-opacity-25 shadow-inner z-0">
           <Hero />
           <Book />
